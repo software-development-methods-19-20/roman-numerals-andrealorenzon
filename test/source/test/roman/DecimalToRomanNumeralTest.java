@@ -71,4 +71,10 @@ public class DecimalToRomanNumeralTest {
         assertEquals("MMMDCCXXIV", romanNumeral.toString() );
     }
 
+    @Test
+    void number3724IsMMMDCCXXIV_double() {
+        RomanNumeral romanNumeral = new RomanNumeral(3724);
+        assertEquals("MMMDCCXXIV", romanNumeral.toString());
+        assertEquals("MMMDCCXXIV", romanNumeral.toString());
+    }
 }
