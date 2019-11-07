@@ -20,7 +20,12 @@
 
 package dssc.roman;
 
-import java.util.stream.Stream;
+
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+
 
 public class RomanNumeral {
     @Override
@@ -41,66 +46,31 @@ public class RomanNumeral {
 
         roman = "";
 
+    /** linked hashmap of all the bases of the roman numbers */
+    Map<Integer, String> bases =  new LinkedHashMap<Integer, String>();
+    bases.put(1000, "M");
+    bases.put(900,  "CM");
+    bases.put(500, "D");
+    bases.put(400, "CD");
+    bases.put(100, "C");
+    bases.put(90, "XC");
+    bases.put(50, "L");
+    bases.put(40, "XL");
+    bases.put(10, "X");
+    bases.put(9, "IX");
+    bases.put(5, "V");
+    bases.put(4, "IV");
+    bases.put(1, "I");
 
-        while (value>=1000) {   // M
-            roman+="M";
-            value-=1000;
+    /** Actual parsing of value, with progressive subtraction of bases keys and concatenation of letters
+     * until value is zero.
+     */
+    for (Map.Entry<Integer,String> entry : bases.entrySet()) {
+        while (value>=entry.getKey()) {
+            this.roman += entry.getValue();
+            this.value -= entry.getKey();
         }
-
-        while (value>=900) {    // CM
-            roman+="CM";
-            value-=900;
-        }
-
-        while (value>=500) {    // L
-            roman+="D";
-            value-=500;
-        }
-
-        while (value>=400) {    // CD
-            roman+="CD";
-            value-=400;
-        }
-        
-        while (value>=100) {    // C
-            roman+="C";
-            value-=100;
-        }
-
-        while (value>=90) {     // XC
-            roman+="XC";
-            value-=90;
-        }
-
-        while (value>=50) {     // L
-            roman+="L";
-            value-=50;
-        }
-        while (value>=40) {      // XL
-            roman+="IX";
-            value-=40;
-        }
-        while (value>=10) {    // X
-            roman+="X";
-            value-=10;
-        }
-        while (value>=9) {      //IX
-            roman+="IX";
-            value-=9;
-        }
-        while (value>=5) {      // V
-            roman+="V";
-            value-=5;
-        }
-        while (value>=4) {      // IV
-            roman+="IV";
-            value-=4;
-        }
-        while (value>=1) {      // I
-            roman+="I";
-            value-=1;
-
-        }
+    }
 
         /*
         Rinominata a decimal la variabile di input, dobbiamo fare override del metodo toString(), almeno.
