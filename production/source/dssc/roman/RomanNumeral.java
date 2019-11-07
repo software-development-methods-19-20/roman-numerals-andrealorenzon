@@ -20,7 +20,12 @@ public class RomanNumeral {
 
         else
         {
-            roman = "I";
+            switch (value) {
+                case 1: {roman = "I";}
+                    break;
+                case 4: {roman = "IV";}
+                    break;
+            };
         }
 
         /*

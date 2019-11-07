@@ -30,6 +30,11 @@ public class DecimalToRomanNumeralTest {
 
 
      */
+    /*
+    Ora si può runnare il test (già configurato dal prof) "all tests", che fallisce.
+    Andiamo a RomanNumeral.java per implementare.
+     */
+
     @Test
     void zeroIsEmptyString() {
         RomanNumeral romanNumeral = new RomanNumeral(0);
@@ -42,9 +47,9 @@ public class DecimalToRomanNumeralTest {
         assertEquals("I", romanNumeral.toString() );
     }
 
-
-    /*
-    Ora si può runnare il test (già configurato dal prof) "all tests", che fallisce.
-    Andiamo a RomanNumeral.java per implementare.
-     */
+    @Test
+    void fourIsIV() {
+        RomanNumeral romanNumeral = new RomanNumeral(4);
+        assertEquals("IV", romanNumeral.toString() );
+    }
 }
