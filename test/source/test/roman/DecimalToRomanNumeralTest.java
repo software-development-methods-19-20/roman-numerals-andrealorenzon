@@ -42,14 +42,33 @@ public class DecimalToRomanNumeralTest {
     }
 
     @Test
-    void oneIsI() {
+    void number1IsI() {
         RomanNumeral romanNumeral = new RomanNumeral(1);
         assertEquals("I", romanNumeral.toString() );
     }
 
     @Test
-    void fourIsIV() {
+    void number4IsIV() {
         RomanNumeral romanNumeral = new RomanNumeral(4);
         assertEquals("IV", romanNumeral.toString() );
     }
+
+    @Test
+    void number10IsX() {
+        RomanNumeral romanNumeral = new RomanNumeral(10);
+        assertEquals("X", romanNumeral.toString() );
+    }
+
+    @Test
+    void number2019IsMMXIX() {
+        RomanNumeral romanNumeral = new RomanNumeral(2019);
+        assertEquals("MMXIX", romanNumeral.toString() );
+    }
+
+    @Test
+    void number3724IsMMMDCCXXIV() {
+        RomanNumeral romanNumeral = new RomanNumeral(3724);
+        assertEquals("MMMDCCXXIV", romanNumeral.toString() );
+    }
+
 }
