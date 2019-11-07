@@ -3,10 +3,25 @@ package dssc.roman;
 public class RomanNumeral {
     @Override
     public String toString() {
-        return "";
+        return this.roman;
     }
 
+    // internal variables
+
+    Integer value;
+    String roman = "";
+
     public RomanNumeral(int decimal) {
+        value = decimal;
+
+        if (value==0) {
+            roman = "";
+        }
+
+        else
+        {
+            roman = "I";
+        }
 
         /*
         Rinominata a decimal la variabile di input, dobbiamo fare override del metodo toString(), almeno.

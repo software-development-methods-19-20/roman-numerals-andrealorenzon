@@ -36,6 +36,13 @@ public class DecimalToRomanNumeralTest {
         assertEquals("", romanNumeral.toString());
     }
 
+    @Test
+    void oneIsI() {
+        RomanNumeral romanNumeral = new RomanNumeral(1);
+        assertEquals("I", romanNumeral.toString() );
+    }
+
+
     /*
     Ora si può runnare il test (già configurato dal prof) "all tests", che fallisce.
     Andiamo a RomanNumeral.java per implementare.
